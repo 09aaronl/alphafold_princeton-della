@@ -1,8 +1,8 @@
 # Running AlphaFold on the Della cluster at Princeton University
 This repo contains a SLURM job submission script to run AlphaFold on the Della cluster at Princeton University. This script loads the AlphaFold module and then calls the `run_alphafold.sh` wrapper, which in turn executes the `run_alphafold.py` script.
 
-- **AlphaFold version: 2.2.4**
-- **Database date: 2021-11-22**
+- **AlphaFold version: 2.3.1**
+- **Database date: 2022-12-20**
 
 # Change email notifications
 After downloading `alphafold.slurm`, change the line `#SBATCH --mail-user=<netid>@princeton.edu` to include your netid. The default in the next few lines is to send an email when the SLURM job fails or ends successfully, but you can modify them to receive more or fewer emails, see see https://slurm.schedmd.com/sbatch.html for full list.
