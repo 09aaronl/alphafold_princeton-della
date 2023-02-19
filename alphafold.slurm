@@ -3,6 +3,7 @@
 # Default settings, don't have to modify
 #SBATCH --job-name=aFold
 #SBATCH --output=%x.%a.%j.stdout
+#SBATCH --partition=cryoem
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=8
 #SBATCH --ntasks-per-socket=8
