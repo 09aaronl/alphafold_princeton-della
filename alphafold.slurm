@@ -23,7 +23,7 @@ model='monomer'             # possible values: {monomer, monomer_casp14, monomer
 
 # Script, don't have to modify
 module purge
-module load alphafold/2.2.4
+module load alphafold/2.3.1
 
 list_proteins='proteins.txt'
 
@@ -33,9 +33,9 @@ protein=$(head -n ${idx} ${list_proteins} | tail -n +${idx})
 run_alphafold.sh \
                  -f ${protein}.fa \
                  -o . \
-                 -d /scratch/gpfs/DATASETS/alphafold/2021-11-22 \
+                 -d /scratch/gpfs/DATASETS/alphafold/2022-12-20 \
                  -m ${model} \
-                 -t 2021-11-22 \
+                 -t 2022-12-20 \
                  -g \
                  -a 0 \
                  -n 8
