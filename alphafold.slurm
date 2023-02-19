@@ -23,7 +23,7 @@ model='monomer'             # possible values: {monomer, monomer_casp14, monomer
 
 # Script, don't have to modify
 module purge
-module load alphafold/2.1.2
+module load alphafold/2.2.4
 
 list_proteins='proteins.txt'
 
