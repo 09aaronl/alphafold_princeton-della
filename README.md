@@ -1,7 +1,7 @@
 # Running AlphaFold on the Della cluster at Princeton University
 This repo contains a SLURM job submission script to run AlphaFold on the Della cluster at Princeton University. This script loads the AlphaFold module and then calls the `run_alphafold.sh` wrapper, which in turn executes the `run_alphafold.py` script.
 
-- **AlphaFold version: 2.1.2**
+- **AlphaFold version: 2.2.4**
 - **Database date: 2021-11-22**
 
 # Change email notifications
