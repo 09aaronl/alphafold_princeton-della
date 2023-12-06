@@ -4,6 +4,10 @@ This repo contains a SLURM job submission script to run AlphaFold on the Della c
 - **AlphaFold version: 2.3.1**
 - **Database date: 2022-12-20**
 
+# Clone this repo onto the Della file system
+mkdir <project directory>; cd <project directory>
+git clone https://github.com/09aaronl/alphafold_princeton-della/ .
+
 # Change email notifications
 After downloading `alphafold.slurm`, change the line `#SBATCH --mail-user=<netid>@princeton.edu` to include your netid. The default in the next few lines is to send an email when the SLURM job fails or ends successfully, but you can modify them to receive more or fewer emails, see see https://slurm.schedmd.com/sbatch.html for full list.
 
