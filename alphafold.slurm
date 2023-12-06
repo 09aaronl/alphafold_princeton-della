@@ -36,6 +36,7 @@ run_alphafold.sh \
                  -d /scratch/gpfs/DATASETS/alphafold/2022-12-20 \
                  -m ${model} \
                  -t 2022-12-20 \
-                 -g \
+                 -g true \
                  -a 0 \
-                 -n 8
+                 -n 8 \
+                 -j 5
