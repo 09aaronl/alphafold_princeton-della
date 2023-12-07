@@ -16,27 +16,43 @@
 #SBATCH --mail-type=END
 
 # MODIFY THESE SETTINGS EACH TIME
-#SBATCH --time=02:00:00     # typically ~1 h per 250 residues
-#SBATCH --array=1-4         # which proteins to run from 'proteins.txt', 1-indexed, inclusive
-model='monomer'             # possible values: {monomer, monomer_casp14, monomer_ptm, multimer}
+#SBATCH --time=04:00:00     # typically ~1 h per 250 residues
+#SBATCH --array=1-2         # which proteins to run from 'proteins.txt', 1-indexed, inclusive
 
 
 # Script, don't have to modify
+version='2.3.1'
+database='2022-12-20'
 module purge
-module load alphafold/2.3.1
+module load alphafold/${version}
 
 list_proteins='proteins.txt'
 
 idx=${SLURM_ARRAY_TASK_ID}
-protein=$(head -n ${idx} ${list_proteins} | tail -n +${idx})
+line=$(head -n ${idx} ${list_proteins} | tail -n +${idx})
+protein=$(echo $line | awk -F ',' '{print $1}')
+model=$(echo $line | awk -F ',' '{print $2}')
 
-run_alphafold.sh \
-                 -f ${protein}.fa \
-                 -o . \
-                 -d /scratch/gpfs/DATASETS/alphafold/2022-12-20 \
-                 -m ${model} \
-                 -t 2022-12-20 \
-                 -g true \
-                 -a 0 \
-                 -n 8 \
-                 -j 5
+echo "Initializing AlphaFold"
+echo "Version: ${version}"
+echo "Database: ${database}"
+echo
+
+if [[ -s ${protein} ]]
+then
+    echo "Protein(s): ${protein}"
+    echo
+    run_alphafold.sh \
+        -f ${protein} \
+        -o . \
+        -d /scratch/gpfs/DATASETS/alphafold/${database} \
+        -m ${model} \
+        -t ${database} \
+        -g true \
+        -a 0 \
+        -n 8 \
+        -j 5
+else
+    echo "ERROR: ${protein} not found"
+    echo
+fi
