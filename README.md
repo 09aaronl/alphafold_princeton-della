@@ -32,7 +32,7 @@ Thank you,
 4. Clone this github repo into the directory with `git clone https://github.com/09aaronl/alphafold_princeton-della/ .`
 5. List the contents of your project directory with `ls`. You should see 6 files:
 ```
-alphafold.slurm  EXAMPLE_proteins.txt  EXAMPLE_protein1.fa  EXAMPLE_proteins12.fa  LICENSE  README.md
+alphafold.slurm  EXAMPLE_protein1.fa  EXAMPLE_proteins12.fa  EXAMPLE_proteins.txt  LICENSE  README.md
 ```
 
 # Set up your proteins to fold
