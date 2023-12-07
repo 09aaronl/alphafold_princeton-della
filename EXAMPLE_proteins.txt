@@ -1,0 +1,2 @@
+EXAMPLE_protein1.fa,monomer
+EXAMPLE_proteins12.fa,multimer
