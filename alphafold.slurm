@@ -16,7 +16,7 @@
 #SBATCH --mail-type=END
 
 # MODIFY THESE SETTINGS EACH TIME
-#SBATCH --time=04:00:00     # typically ~1 h per 250 residues
+#SBATCH --time=06:00:00     # typically ~1 h per 250 residues
 #SBATCH --array=1-2         # which proteins to run from 'proteins.txt', 1-indexed, inclusive
 
 
