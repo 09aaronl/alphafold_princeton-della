@@ -68,7 +68,7 @@ QFRCFLDINGSECNDPRTEINSEQFRCFLDING
 ```
 
 # Edit the SLURM job submission script
-9. Edit the script with a text editor:
+9. Edit the file `alphafold.slurm` with a text editor:
 - Change the line `#SBATCH --mail-user=<netid>@princeton.edu` to include your netid
 - Change the line `#SBATCH --time=06:00:00` to the maximum expected runtime, typically 1 h per 250 residues
     - **This does not need to be edited for the test run with the EXAMPLE files**
